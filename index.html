@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>DevPortfolio Hub Pro</title>
+
+<style>
+body {
+  margin: 0;
+  font-family: Arial;
+  background: #0b1220;
+  color: white;
+  scroll-behavior: smooth;
+}
+
+/* ===== NAVBAR ===== */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background: rgba(17, 24, 39, 0.8);
+  backdrop-filter: blur(10px);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+  margin-left: 15px;
+  font-size: 14px;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
+}
+
+/* ===== HERO ===== */
+.hero {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding-top: 60px;
+  background: radial-gradient(circle at center, #111827, #0b1220);
+}
+
+.hero h1 {
+  font-size: 55px;
+  margin: 0;
+  animation: fadeUp 1s ease;
+}
+
+.hero p {
+  color: #94a3b8;
+  animation: fadeUp 1.3s ease;
+}
+
+.btn {
+  margin-top: 20px;
+  padding: 12px 22px;
+  background: #38bdf8;
+  color: black;
+  border-radius: 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: scale(1.05);
+}
+
+/* ===== SECTIONS ===== */
+section {
+  padding: 80px 20px;
+  max-width: 1000px;
+  margin: auto;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 0.6s ease;
+}
+
+section.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== CARDS ===== */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.card {
+  background: #111827;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  background: #1f2937;
+}
+
+/* ===== SERVICES (AGENCY STYLE) ===== */
+.service {
+  background: linear-gradient(145deg, #111827, #0f172a);
+  border: 1px solid #1f2937;
+}
+
+/* ===== CONTACT ===== */
+input, textarea {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  background: #111827;
+  border: 1px solid #1f2937;
+  color: white;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 15px;
+  padding: 12px;
+  background: #38bdf8;
+  border: none;
+  width: 100%;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 8px;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp {
+  from {opacity:0; transform:translateY(20px);}
+  to {opacity:1; transform:translateY(0);}
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 600px) {
+  .hero h1 {
+    font-size: 35px;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>DevPortfolio</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#projects">Projects</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <h1>Paa Kwesi</h1>
+  <p>Frontend Developer • Web Designer • Freelancer</p>
+  <a class="btn" href="#contact">Hire Me</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>I build modern, responsive, and high-performance websites for businesses and personal brands.</p>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2>Skills</h2>
+  <div class="grid">
+    <div class="card">HTML</div>
+    <div class="card">CSS</div>
+    <div class="card">JavaScript</div>
+    <div class="card">Responsive Design</div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2>Projects</h2>
+  <div class="grid">
+    <div class="card">Skylaws Website</div>
+    <div class="card">Portfolio Hub</div>
+  </div>
+</section>
+
+<!-- SERVICES (CLIENT MONEY SECTION) -->
+<section id="services">
+  <h2>Services</h2>
+  <div class="grid">
+    <div class="card service">Landing Page Design</div>
+    <div class="card service">Portfolio Websites</div>
+    <div class="card service">Frontend Development</div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2>Contact Me</h2>
+
+  <input type="text" placeholder="Your Name">
+  <input type="email" placeholder="Your Email">
+  <textarea rows="5" placeholder="Your Message"></textarea>
+  <button>Send Message</button>
+</section>
+
+<script>
+// SCROLL ANIMATION
+const sections = document.querySelectorAll("section");
+
+window.addEventListener("scroll", () => {
+  sections.forEach(sec => {
+    const top = sec.getBoundingClientRect().top;
+    if (top < window.innerHeight - 100) {
+      sec.classList.add("show");
+    }
+  });
+});
+</script>
+
+</body>
+</html>
