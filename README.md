@@ -78,7 +78,7 @@ Simply upload the files and go live.
 
 For collaborations or freelance work:
 
-Email: yourname@gmail.com  
+Email: paakwesitechie@gmail.com  
 Portfolio: (add your live link here)
 
 ---
